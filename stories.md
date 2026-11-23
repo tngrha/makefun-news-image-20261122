@@ -28,15 +28,13 @@ REPORTED or CLAIM in the image. Times are UTC where verified.
 6. Democrats win largest House majority since 1992 — Washington. At least 258
    seats after a recount; Republicans at least 173, 4 races undecided.
    Sources: BBC, Guardian.
-7. Global stocks fall as AI sell-off deepens — S&P 500 −3.7%, Nikkei −5.06%
-   (Friday closes, reported through Sunday). Nvidia faces SEC inquiry after
-   Jensen Huang resigned. Sources: AP, SCMP.
-8. Mexico captures cartel boss 'El Chapo Isidro' — Sinaloa (captured Sat,
-   confirmed/reported Sun). Fausto Isidro Meza Flores, FBI top-10 fugitive;
-   4 soldiers and 16 gunmen killed. Sources: NPR, BBC, AP.
-9. Candy factory fire in Indonesia leaves 3 dead, dozens missing — Banten
-   (fire Sat, rescue Sun). ~36 missing; 6 body bags recovered Sunday.
-   Sources: AP, Reuters, BBC.
+7. China cuts margin deposit ratio to 80% — Shanghai/Shenzhen/Beijing exchanges
+   announced Sunday Nov 22 (CSRC approval); cut from 100%, effective Nov 30.
+   Sources: Reuters, Xinhua.
+8. Hong Kong holds Election Committee vote — Sunday. ~99% turnout; ~5,700
+   eligible voters, 856 candidates for 723 seats. Sources: SCMP.
+9. Rescuers search candy factory ruins; 36 missing — Banten (fire Sat, rescue
+   Sun). Six body bags recovered Sunday; 3 confirmed dead. Sources: AP, Reuters.
 10. Settlers torch vehicles in West Bank villages; Israel opens inquiry —
     Ramallah area. 12 vehicles and several homes burned overnight.
     Sources: France 24, Guardian.
@@ -59,7 +57,7 @@ REPORTED or CLAIM in the image. Times are UTC where verified.
 
 North America:
 17. US: Trump orders contractors to report Congress asks — Guardian.
-18. FBI probes reported breach of crime database — BBC.
+18. US: man convicted of starting 2025 Palisades fire — France 24.
 19. Seattle: ICE airport arrests draw governor's fury — Al Jazeera.
 20. Baseball: Skubal reportedly agrees $450m Mets deal — Guardian Sport.
 21. Golf: Thitikul wins LPGA finale for 3rd year running — BBC Sport.
@@ -98,7 +96,7 @@ Africa:
 Asia:
 45. EU–Indonesia trade deal signed; 98.5% of tariffs go — Euronews.
 46. Bangladesh garment strikes clash with police — Business Standard.
-47. Hong Kong Election Committee vote draws ~99% turnout — SCMP.
+47. K-pop: BTS win five MAMA awards in Osaka — Yonhap.
 48. Mongolia: parliament accepts president's resignation — Euronews.
 49. Japan: Shuri Castle hall restored 7 years after fire — Japan Times.
 50. K-pop: Ateez earn 4th No. 1 on Billboard 200 — Yonhap.
@@ -125,7 +123,8 @@ Africa, Asia, Oceania; COP31 and markets tagged GLOBAL, BepiColombo SPACE).
 - Xi–Trump–Putin summit in Shenzhen — Thu 19 Nov.
 - ICJ rules Myanmar committed genocide — Thu 19 Nov.
 - Voyager 1 reaches one light-day from Earth — Wed 18 Nov.
-- Pilotless air-taxi passenger flight in Japan — Fri 20 Nov.
+- Mexico captures 'El Chapo Isidro' — Fri 20 Nov raid (announced Sat 21 Nov).
+- S&P 500 −3.7% Friday close (AI sell-off) — Fri 20 Nov.
 - BepiColombo insertion burn — Sat 21 Nov 18:24 UTC (ESA confirmed Sunday).
 - Jensen Huang quits Nvidia — 12–13 Nov.
 - Not yet: Spain general election — Sun 29 Nov.
