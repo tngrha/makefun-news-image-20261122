@@ -393,10 +393,44 @@ def illo_drone(d, x, y, w, h):
     burst(d, x + w * 0.8, y + h * 0.3, 10, (245, 130, 40))
 
 
+def illo_margin(d, x, y, w, h):
+    d.rectangle([x, y, x + w, y + h], fill=(238, 240, 244))
+    base = y + h - 8
+    # two bars: 100% then 80%
+    d.rectangle([x + w * 0.18, y + 8, x + w * 0.38, base], fill=(150, 158, 170))
+    d.rectangle([x + w * 0.52, y + 8 + (base - y - 8) * 0.2, x + w * 0.72, base], fill=(200, 40, 40))
+    d.line([(x + w * 0.1, base), (x + w * 0.85, base)], fill=(90, 90, 90), width=2)
+    # down arrow between bars
+    ax = x + w * 0.45
+    d.line([(ax, y + 12), (ax, y + h * 0.55)], fill=RED, width=3)
+    d.polygon([(ax - 5, y + h * 0.55), (ax + 5, y + h * 0.55), (ax, y + h * 0.55 + 8)], fill=RED)
+    f = font(SERIF_BLACK, 15)
+    d.text((x + w * 0.74, y + h * 0.3), "80%", font=f, fill=RED)
+    f2 = font(SANS_B, 7)
+    d.text((x + w * 0.74, y + h * 0.3 + 18), "FROM 100%", font=f2, fill=MUTED)
+
+
+def illo_ballot(d, x, y, w, h):
+    d.rectangle([x, y, x + w, y + h], fill=(240, 236, 224))
+    bx, bw = x + w * 0.16, w * 0.44
+    by = y + h * 0.42
+    d.rectangle([bx, by, bx + bw, y + h - 6], fill=(120, 128, 142), outline=(80, 86, 100), width=2)
+    d.rectangle([bx + bw * 0.2, by + 5, bx + bw * 0.8, by + 9], fill=(40, 44, 54))
+    # ballot paper going in
+    px = bx + bw * 0.3
+    d.rectangle([px, y + 5, px + bw * 0.4, by + 4], fill=(255, 255, 255), outline=(140, 140, 140), width=1)
+    d.line([(px + 4, y + 12), (px + bw * 0.2, y + 20), (px + bw * 0.36, y + 8)], fill=RED, width=3)
+    f = font(SERIF_BLACK, 16)
+    d.text((x + w * 0.66, y + h * 0.3), "99%", font=f, fill=RED)
+    f2 = font(SANS_B, 7)
+    d.text((x + w * 0.66, y + h * 0.3 + 19), "TURNOUT", font=f2, fill=MUTED)
+
+
 ILLOS = {
     "thermo": illo_thermo, "building": illo_building, "tanker": illo_tanker,
     "mercury": illo_mercury, "warship": illo_warship, "capitol": illo_capitol,
-    "chart": illo_chart, "star": illo_star, "factory": illo_factory,
+    "chart": illo_chart, "margin": illo_margin, "ballot": illo_ballot,
+    "star": illo_star, "factory": illo_factory,
     "car_fire": illo_car_fire, "exam": illo_exam, "moto": illo_moto,
     "tennis": illo_tennis, "f1": illo_f1, "robot": illo_robot, "drone": illo_drone,
 }
@@ -426,14 +460,14 @@ SMALL = [
     (6, "N. AMERICA · POLITICS", "Democrats reach 258 House seats, most since 1992",
      "A North Carolina recount seals the tally; four races still undecided.",
      "CONFIRMED", "BBC", "capitol", (0.20, 0.30)),
-    (7, "GLOBAL · MARKETS", "AI sell-off deepens: S&P -3.7%, Nikkei -5.1%",
-     "Friday closes reported through Sunday; Nvidia faces an SEC inquiry after Huang quit.",
-     "REPORTED", "AP", "chart", (0.16, 0.28)),
-    (8, "S. AMERICA · JUSTICE", "Mexico captures cartel boss ‘El Chapo Isidro’",
-     "FBI top-10 fugitive seized in Sinaloa; four soldiers and 16 gunmen killed.",
-     "CONFIRMED", "NPR", "star", (0.13, 0.42)),
-    (9, "ASIA · DISASTER", "Candy factory fire: 3 dead, 36 missing",
-     "Rescuers pull six body bags from the Cikande ruins on Sunday.",
+    (7, "ASIA · MARKETS", "China cuts margin deposit ratio to 80%",
+     "Three exchanges act Sunday to steady shares; the cut from 100% takes effect Nov 30.",
+     "CONFIRMED", "Reuters", "margin", (0.78, 0.27)),
+    (8, "ASIA · POLITICS", "Hong Kong vote draws ~99% turnout",
+     "About 5,700 voters pick the committee that chooses the city's leader; 856 candidates, 723 seats.",
+     "CONFIRMED", "SCMP", "ballot", (0.81, 0.38)),
+    (9, "ASIA · DISASTER", "Rescuers search candy factory ruins; 36 missing",
+     "Six body bags recovered Sunday at the Cikande plant; three confirmed dead.",
      "CONFIRMED", "AP", "factory", (0.78, 0.58)),
     (10, "MIDDLE EAST · WEST BANK", "Settlers torch vehicles in West Bank villages",
      "Twelve vehicles and several homes burned near Ramallah; Israel opens an inquiry.",
@@ -462,7 +496,7 @@ SMALL = [
 BRIEFS = [
     ("NORTH AMERICA", [
         ("US:", "Trump orders contractors to report Congress asks"),
-        ("FBI:", "probes reported breach of crime database"),
+        ("US:", "man convicted of starting 2025 Palisades fire"),
         ("Seattle:", "ICE airport arrests draw governor's fury"),
         ("Baseball:", "Skubal reportedly agrees $450m Mets deal"),
         ("Golf:", "Thitikul wins LPGA finale 3rd year running"),
@@ -501,7 +535,7 @@ BRIEFS = [
     ("ASIA", [
         ("Trade:", "EU–Indonesia deal signed; 98.5% of tariffs go"),
         ("Bangladesh:", "garment strikes clash with police"),
-        ("Hong Kong:", "Election Committee vote draws ~99% turnout"),
+        ("K-pop:", "BTS win five MAMA awards in Osaka"),
         ("Mongolia:", "parliament accepts president's resignation"),
         ("Japan:", "Shuri Castle hall restored 7 years after fire"),
         ("K-pop:", "Ateez earn 4th No. 1 on Billboard 200"),
@@ -526,12 +560,17 @@ DATE_CHECK = [
     ("Xi–Trump–Putin summit, Shenzhen", "Thu 19 Nov"),
     ("ICJ: Myanmar committed genocide", "Thu 19 Nov"),
     ("Voyager 1 one light-day out", "Wed 18 Nov"),
-    ("Pilotless air-taxi flight, Japan", "Fri 20 Nov"),
+    ("Mexico captures 'El Chapo Isidro'", "Fri 20 Nov"),
+    ("S&P 500 -3.7% Friday close", "Fri 20 Nov"),
     ("BepiColombo burn (confirmed Sun)", "Sat 21 Nov"),
     ("Jensen Huang quits Nvidia", "12–13 Nov"),
     ("Not yet: Spain election", "Sun 29 Nov"),
     ("Not yet: Belgian air strike", "Mon 23 Nov"),
 ]
+
+FIELDS = ["war", "climate", "space & science", "politics", "markets", "justice",
+          "disaster", "sport", "technology", "health", "culture", "energy",
+          "labour", "trade"]
 
 REGION_COLORS = {
     "NORTH AMERICA": (52, 96, 164), "SOUTH AMERICA": (30, 140, 110),
@@ -621,7 +660,7 @@ def main():
     # ---- masthead
     f_kick = font(SANS_B, 11)
     d.text((x0, 12), "THE WORLD'S NEWS OF ONE DAY", font=f_kick, fill=RED)
-    counts = "52 STORIES · 7 REGIONS · ALL FROM THIS SUNDAY"
+    counts = f"52 STORIES · 7 REGIONS · {len(FIELDS)} FIELDS · ALL FROM THIS SUNDAY"
     d.text((x0 + CW - text_w(d, counts, f_kick), 12), counts, font=f_kick, fill=INK)
     f_date = font(SERIF_BLACK, 60)
     d.text((x0, 28), "Sunday 22 November 2026", font=f_date, fill=INK)
@@ -702,7 +741,7 @@ def main():
         lx += 10 + text_w(d, label, f_leg) + 8
     # date check box
     dy = ly + 15
-    d.rectangle([x0, dy, x0 + left_w, dy + 112], outline=RED, width=2)
+    d.rectangle([x0, dy, x0 + left_w, dy + 118], outline=RED, width=2)
     d.rectangle([x0, dy, x0 + left_w, dy + 16], fill=(250, 232, 230))
     d.text((x0 + 6, dy + 3), "DATE CHECK — LEFT OUT AS NOT SUNDAY'S NEWS", font=font(SANS_B, 8), fill=RED)
     f_dc = font(SERIF, 9.5)
@@ -711,7 +750,7 @@ def main():
     for what, when in DATE_CHECK:
         d.text((x0 + 6, yy), what, font=f_dc, fill=INK)
         d.text((x0 + left_w - 6 - text_w(d, when, f_dcd), yy), when, font=f_dcd, fill=RED)
-        yy += 11
+        yy += 10.5
 
     # briefs in two columns
     bx0 = x0 + left_w + 16
