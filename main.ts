@@ -1,9 +1,11 @@
-// Entry program for news-image-20261122, written in-session 2026-11-22.
-// Copies the pre-rendered front page (entry.png, drawn by render.py in this
-// repo) to the grader output directory. No network, no dependencies.
+// main.ts — entrypoint for make.fun competition news-image-20261122 (revision 2).
+// Copies the pre-rendered front-page image (entry.png, built by render.py)
+// to /output/entry.png. Deterministic: same bytes on every run, no network.
 import { copyFileSync, mkdirSync } from "node:fs";
-import { join } from "node:path";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 
+const here = dirname(fileURLToPath(import.meta.url));
 const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
 mkdirSync(outDir, { recursive: true });
-copyFileSync(join(import.meta.dirname, "entry.png"), join(outDir, "entry.png"));
+copyFileSync(join(here, "entry.png"), join(outDir, "entry.png"));
